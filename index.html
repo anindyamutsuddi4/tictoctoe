@@ -51,6 +51,7 @@
 
     <script>
         var flag = 0;
+        var gag = 1;
         for (let i = 1; i <= 9; i++) {
 
             document.getElementById(`${i}`).addEventListener('click', function () {
@@ -63,6 +64,7 @@
                         this.innerText = '0'
                         flag = 0
                     }
+
                 }
 
                 let a = document.getElementById('1').innerText
@@ -82,16 +84,16 @@
                             document.getElementById(`${i}`).innerText = ''
                         }
                     }, 100);
-                    flag=0;
+                    flag = 0; gag = 0;
                 }
-                else if (a.trim() == b.trim() && c.trim() == b.trim() && a.trim() == '0') {
+                if (a.trim() == b.trim() && c.trim() == b.trim() && a.trim() == '0') {
                     setTimeout(() => {
                         alert('Second person won')
                         for (let i = 1; i <= 9; i++) {
                             document.getElementById(`${i}`).innerText = ''
                         }
                     }, 100);
-                    flag=0;
+                    flag = 0; gag = 0;
                 }
 
 
@@ -102,15 +104,15 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
-                else if (d.trim() == e.trim() && e.trim() == f.trim() && d.trim() == '0') {
+                if (d.trim() == e.trim() && e.trim() == f.trim() && d.trim() == '0') {
                     setTimeout(() => {
                         alert('Second person won')
                         for (let i = 1; i <= 9; i++) {
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
                 if (g.trim() == h.trim() && h.trim() == i.trim() && g.trim() == 'X') {
@@ -120,17 +122,17 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
-                    
+                    }, 100); flag = 0; gag = 0;
+
                 }
-                else if (g.trim() == h.trim() && h.trim() == i.trim() && g.trim() == '0') {
+                if (g.trim() == h.trim() && h.trim() == i.trim() && g.trim() == '0') {
                     setTimeout(() => {
                         alert('second person won')
                         for (let i = 1; i <= 9; i++) {
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
                 if (a.trim() == d.trim() && d.trim() == g.trim() && a.trim() == 'X') {
@@ -140,7 +142,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
                 if (a.trim() == d.trim() && d.trim() == g.trim() && a.trim() == '0') {
                     setTimeout(() => {
@@ -149,7 +151,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
                 if (b.trim() == e.trim() && e.trim() == h.trim() && b.trim() == 'X') {
@@ -159,7 +161,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
                 if (b.trim() == e.trim() && e.trim() == h.trim() && b.trim() == '0') {
@@ -169,7 +171,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
 
@@ -180,7 +182,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
                 if (c.trim() == f.trim() && f.trim() == i.trim() && c.trim() == '0') {
                     setTimeout(() => {
@@ -189,7 +191,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
                 if (c.trim() == e.trim() && e.trim() == g.trim() && g.trim() == 'X') {
                     setTimeout(() => {
@@ -198,7 +200,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
                 if (c.trim() == e.trim() && e.trim() == g.trim() && g.trim() == '0') {
                     setTimeout(() => {
@@ -207,7 +209,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
 
                 if (a.trim() == e.trim() && e.trim() == i.trim() && i.trim() == 'X') {
@@ -217,7 +219,7 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 100);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
                 if (a.trim() == e.trim() && e.trim() == i.trim() && i.trim() == '0') {
                     setTimeout(() => {
@@ -226,9 +228,16 @@
 
                             document.getElementById(`${i}`).innerText = ''
                         }
-                    }, 300);flag=0;
+                    }, 100); flag = 0; gag = 0;
                 }
-
+                else if (gag === 1 && a.trim() != '' && b.trim() != '' && c.trim() != '' && d.trim() != '' && e.trim() != '' && f.trim() != '' && g.trim() != '' && h.trim() != '' && i.trim() != '') {
+                    setTimeout(() => {
+                        alert('no one won the game')
+                        for (let i = 1; i <= 9; i++) {
+                            document.getElementById(`${i}`).innerText = ''
+                        }
+                    }, 100);
+                }
             })
 
 
